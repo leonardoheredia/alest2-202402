@@ -13,5 +13,8 @@ public class App {
         t1.adicionar(568, "gabriela");
         t1.adicionar(911, "salete");
         System.out.println(t1);
+
+        int chave = 956;
+        System.out.println(t1.buscar(chave));
     }
 }
