@@ -50,11 +50,14 @@ public class TabelaHashEncadeamentoSeparado {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < capacidade; i++) {
             Nodo n = tabela[i];
+            sb.append(System.lineSeparator()).append(i);
             while(n!=null) {
-                sb.append(System.lineSeparator()).append(n);
+                sb.append(" ").append(n);
                 n = n.getProximo();
             }
         }
         return sb.toString();
     }
 }
+
+

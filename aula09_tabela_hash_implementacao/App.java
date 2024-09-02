@@ -7,7 +7,11 @@ public class App {
         t1.adicionar(499, "leonardo");
         t1.adicionar(567, "joao");
         t1.adicionar(400, "maria");
-
+        t1.adicionar(300, "jose");
+        t1.adicionar(871, "gustavo");
+        t1.adicionar(956, "arthur");
+        t1.adicionar(568, "gabriela");
+        t1.adicionar(911, "salete");
         System.out.println(t1);
     }
 }

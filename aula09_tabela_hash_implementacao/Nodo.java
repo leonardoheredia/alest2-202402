@@ -4,6 +4,7 @@ public class Nodo {
     private int chave;
     private String valor;
     private Nodo proximo;
+
     public Nodo(int chave, String valor) {
         this.chave = chave;
         this.valor = valor;
