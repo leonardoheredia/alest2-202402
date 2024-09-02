@@ -2,7 +2,7 @@ package aula08_tabela_hash;
 
 public class TabelaHashEndAberto {
     private int capacidade;
-    private final int CAPACIDADE_INICIAL = 5;
+    private final int CAPACIDADE_INICIAL = 10;
     private int tamanho;
     private int[] chaves;
     private String[] valores;
@@ -21,6 +21,7 @@ public class TabelaHashEndAberto {
             valores[hash] = valor;
         }
         else {
+            System.out.println("colisao na posicao " + hash + " - " + valor);
             int posicao = hash;
             int posicaoOriginal = posicao;
             while(posicao<= capacidade -1) {
