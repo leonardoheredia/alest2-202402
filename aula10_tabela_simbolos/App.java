@@ -7,7 +7,10 @@ public class App {
         TabelaSimbolo<String, String> carros = new TabelaSimbolo<>();
         carros.atualizar("IBL-9444", "Tempra");
         carros.atualizar("JDO-0025", "Vectra");
-        //carros.atualizar("IZV-4444", "Tracker");
+        carros.atualizar("IZV-4444", "Tracker");
         System.out.println(carros);
+
+        String c = "IZV-4443";
+        System.out.println(carros.buscar(c));
     }
 }

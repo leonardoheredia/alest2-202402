@@ -19,16 +19,12 @@ public class TabelaSimbolo<Chave, Valor> {
     }
     public void atualizar(Chave chave, Valor valor) {
         //atualizar("IBL-9444", "OPALA")
-        boolean atualizou = false;
-        for (Nodo n = this.inicio; n!=null; n = n.proximo) {
-            if(n.chave.equals(chave)) {
-                //ACHOU a chave que esta sendo atualizada!
-                n.valor = valor;
-                atualizou = true;
-            }
+        Nodo n = buscarNodo(chave);
+        if(n!=null) {
+            n.valor = valor;
         }
-        if(!atualizou) {
-            Nodo n = new Nodo(chave, valor);
+        else {
+            n = new Nodo(chave, valor);
             n.proximo = inicio;
             inicio = n;
             tamanho++;
@@ -36,10 +32,17 @@ public class TabelaSimbolo<Chave, Valor> {
     }
 
     public Valor buscar(Chave chave) {
-        //recebe uma chave e devolve o valor
+        Nodo n = buscarNodo(chave);
+        if(n!=null) return (Valor) n.valor;
         return null;
     }
 
+    private Nodo buscarNodo(Chave chave) {
+        for (Nodo n = inicio; n!=null; n = n.proximo) {
+            if(n.chave.equals(chave)) return n;
+        }
+        return null;
+    }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
