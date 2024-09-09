@@ -11,7 +11,8 @@ public class App {
         t.adicionar("PESADO");
         t.adicionar("PESO");
         t.adicionar("PEDIDO");
-        t.imprimir();
+        t.palavrasComPrefixo("MAR");
+        //t.imprimir();
         //String s = t.toString();
     }
 }

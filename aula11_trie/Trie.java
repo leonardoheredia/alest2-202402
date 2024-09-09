@@ -39,10 +39,21 @@ public class Trie {
         aux.fimDaPalavra = true;
     }
 
-    public String palavrasComPrefixo(String prefixo) {
+    public void palavrasComPrefixo(String prefixo) {
         //RETORNAR TODAS AS PALAVRAS NA TRIE QUE TENHAM O PREFIXO PASSADO POR PARAMETRO
         //IMPLEMENTAR
-        return null;
+
+        //PEGAR O NODO COM O PREFIXO
+        Nodo aux = this.raiz;
+        for (int i = 0; i < prefixo.length(); i++) {
+            int posicao = prefixo.charAt(i) - 65;
+            if(aux.proximo[posicao]==null) {
+                break;
+            }
+            aux = aux.proximo[posicao];
+        }
+
+        imprimirRecursivo(aux, new StringBuilder());
     }
 
     public boolean buscar(String chave) {
