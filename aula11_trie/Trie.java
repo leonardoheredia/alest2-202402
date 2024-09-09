@@ -39,6 +39,12 @@ public class Trie {
         aux.fimDaPalavra = true;
     }
 
+    public String palavrasComPrefixo(String prefixo) {
+        //RETORNAR TODAS AS PALAVRAS NA TRIE QUE TENHAM O PREFIXO PASSADO POR PARAMETRO
+        //IMPLEMENTAR
+        return null;
+    }
+
     public boolean buscar(String chave) {
         //retorna true ou false se a chave existe na TRIE
         Nodo aux = this.raiz;
