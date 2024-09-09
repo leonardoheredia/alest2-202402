@@ -30,13 +30,11 @@ public class TabelaSimbolo<Chave, Valor> {
             tamanho++;
         }
     }
-
     public Valor buscar(Chave chave) {
         Nodo n = buscarNodo(chave);
         if(n!=null) return (Valor) n.valor;
         return null;
     }
-
     private Nodo buscarNodo(Chave chave) {
         for (Nodo n = inicio; n!=null; n = n.proximo) {
             if(n.chave.equals(chave)) return n;
@@ -50,6 +48,9 @@ public class TabelaSimbolo<Chave, Valor> {
             sb.append(n.chave).append(" ").append(n.valor).append(System.lineSeparator());
         }
         return sb.toString();
+    }
+    public boolean contem(Chave chave) {
+        return buscarNodo(chave)!=null;
     }
 }
 
