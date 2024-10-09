@@ -11,14 +11,28 @@ public class Grafo {
         matrizAdjacencia = new boolean[this.numVertices][this.numVertices];
     }
     public void adicionarAresta(int v, int w) {
-        matrizAdjacencia[v][w] = true;
-        matrizAdjacencia[w][v] = true;
-        numArestas++;
+        if(!existeAresta(v, w)) {
+            matrizAdjacencia[v][w] = true;
+            matrizAdjacencia[w][v] = true;
+            numArestas++;
+        }
     }
-
+    public void removerAresta(int v, int w) {
+        if(existeAresta(v, w)) {
+            matrizAdjacencia[v][w] = false;
+            matrizAdjacencia[w][v] = false;
+            numArestas--;
+        };
+    }
+    public boolean existeAresta(int v, int w) {
+        return matrizAdjacencia[v][w];
+    }
     public String toDot() {
         StringBuilder sb = new StringBuilder();
         sb.append(System.lineSeparator()).append("Graph {");
+        for (int v = 0; v < numVertices; v++) {
+            sb.append(System.lineSeparator()).append(v);
+        }
         for (int v = 0; v < numVertices; v++) {
             for (int w = v; w < numVertices; w++) {
                 if(matrizAdjacencia[v][w]) {
@@ -48,6 +62,6 @@ public class Grafo {
 
     //CORRIGIR O toDot para imprimir vertices isolados
     //implementar o removerAresta(v, w)
-    //implementar o exsiteAresta(v, w)
+    //implementar o existeAresta(v, w)
 
 }
