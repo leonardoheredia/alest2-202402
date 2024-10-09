@@ -1,5 +1,7 @@
 package aula20_grafos;
 
+import java.util.ArrayList;
+
 public class Grafo {
     private int numVertices;
     private int numArestas;
@@ -27,6 +29,17 @@ public class Grafo {
     public boolean existeAresta(int v, int w) {
         return matrizAdjacencia[v][w];
     }
+
+    public ArrayList<Integer> verticesAdjacentes(int v) {
+        ArrayList<Integer> adjacentes = new ArrayList<>();
+        for (int w = 0; w < numVertices; w++) {
+            if(matrizAdjacencia[v][w]) {
+                adjacentes.add(w);
+            }
+        }
+        return adjacentes;
+    }
+
     public String toDot() {
         StringBuilder sb = new StringBuilder();
         sb.append(System.lineSeparator()).append("Graph {");
