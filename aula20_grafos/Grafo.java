@@ -40,6 +40,22 @@ public class Grafo {
         return adjacentes;
     }
 
+    public void buscarEmProfundidade(int origem) {
+        boolean[] visitados = new boolean[numVertices];
+        System.out.println("");
+        buscarEmProfundidadeRecursivo(origem, visitados);
+    }
+    private void buscarEmProfundidadeRecursivo(int vertice, boolean[] visitados) {
+        visitados[vertice] = true;
+        System.out.println("Marquei o " + vertice + " como vistado");
+        for(int w:verticesAdjacentes(vertice)) {
+            if(!visitados[w]) {
+                System.out.println("Vou visitar o " + w);
+                buscarEmProfundidadeRecursivo(w, visitados);
+            }
+        }
+    }
+
     public String toDot() {
         StringBuilder sb = new StringBuilder();
         sb.append(System.lineSeparator()).append("Graph {");

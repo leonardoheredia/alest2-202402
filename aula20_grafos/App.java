@@ -22,6 +22,7 @@ public class App {
         System.out.print("Adjacentes do " + v + " = ");
         for(int w:adjacentes) System.out.printf(" %d ", w);
 
+        g.buscarEmProfundidade(0);
 
     }
 }
