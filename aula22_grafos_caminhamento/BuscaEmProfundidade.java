@@ -37,7 +37,16 @@ public class BuscaEmProfundidade {
     public String caminhoPara(int destino) {
         //IMPLEMENTAR
         //RETORNA O CAMINHO DO VERTICE ORIGEM PARA O DESTINO
-        return null;
+        ArrayList<Integer> caminho = new ArrayList<>();
+        int v = destino;
+        String r = "";
+        while(v!=origem) {
+            caminho.add(0, v);
+            v = anteriores[v];
+        }
+        caminho.add(0, origem);
+        for(int i:caminho) r = r + " " + i;
+        return r;
     }
     public String resultado() {
         //IMPLEMENTAR

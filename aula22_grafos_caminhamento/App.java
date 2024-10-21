@@ -10,7 +10,7 @@ public class App {
         g.adicionarAresta(3, 4);
 
         BuscaEmProfundidade b = new BuscaEmProfundidade(g, 0);
-        b.caminhoPara(4);
+        System.out.println(b.caminhoPara(4));
 
 
     }
