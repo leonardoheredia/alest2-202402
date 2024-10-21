@@ -8,7 +8,7 @@ public class BuscaEmProfundidade {
     private int[] anteriores;
     private boolean[] visitados;
 
-    public BuscaEmProfundidade(int origem) {
+    public BuscaEmProfundidade(GrafoListaAdjacencia grafo, int origem) {
         //IMPLEMENTAR
     }
     public String caminhoPara(int destino) {
