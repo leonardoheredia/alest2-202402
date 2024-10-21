@@ -68,8 +68,9 @@ public class GrafoListaAdjacencia {
         return sb.toString();
     }
 
-
-
+    public int getNumVertices() {
+        return numVertices;
+    }
 }
 
 
