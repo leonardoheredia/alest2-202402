@@ -67,24 +67,33 @@ public class Digrafo {
     }
     public String ordenacaoTopologica() {
         //IMPLEMENTAR AULA 28/10
-        return null;
+        return ordenarTopologicamente();
     }
     private String ordenarTopologicamente() {
+        //EM DESENVOLVIMENTO
+        //TEM BUGS, EH PARA VCS FIXAREM
+
         boolean[] visitados = new boolean[this.numVertices];
         ArrayList<Integer> ordemTopologica = new ArrayList<>();
         for (int v = 0; v < numVertices; v++) {
+            ordemTopologica.clear();
             buscarEmProfundidadeRecursivo(v, visitados, ordemTopologica);
+            System.out.println(ordemTopologica);
         }
         return ordemTopologica.toString();
     }
     private void buscarEmProfundidadeRecursivo(int v,
                                                boolean[] visitados,
                                                ArrayList<Integer> ordemTopologica) {
-
+        visitados[0] = true;
+        for(int w:verticesAdjacentes(v)) {
+            buscarEmProfundidadeRecursivo(w, visitados, ordemTopologica);
+        }
+        ordemTopologica.add(v);
     }
 }
 
-
+//[ 3, 6, 0, 5, 2 , 1, 4]
 
 
 
