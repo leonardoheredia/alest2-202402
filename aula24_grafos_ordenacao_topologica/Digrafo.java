@@ -69,6 +69,19 @@ public class Digrafo {
         //IMPLEMENTAR AULA 28/10
         return null;
     }
+    private String ordenarTopologicamente() {
+        boolean[] visitados = new boolean[this.numVertices];
+        ArrayList<Integer> ordemTopologica = new ArrayList<>();
+        for (int v = 0; v < numVertices; v++) {
+            buscarEmProfundidadeRecursivo(v, visitados, ordemTopologica);
+        }
+        return ordemTopologica.toString();
+    }
+    private void buscarEmProfundidadeRecursivo(int v,
+                                               boolean[] visitados,
+                                               ArrayList<Integer> ordemTopologica) {
+
+    }
 }
 
 
