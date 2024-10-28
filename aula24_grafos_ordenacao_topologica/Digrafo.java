@@ -2,12 +2,12 @@ package aula24_grafos_ordenacao_topologica;
 
 import java.util.ArrayList;
 
-public class GrafoListaAdjacencia {
+public class Digrafo {
     private int numVertices;
     private int numArestas;
     private ArrayList<Integer>[] listaAdjacencias;
 
-    public GrafoListaAdjacencia(int numVertices) {
+    public Digrafo(int numVertices) {
         this.numVertices = numVertices;
         this.numArestas = 0;
         listaAdjacencias = new ArrayList[this.numVertices];
@@ -23,14 +23,12 @@ public class GrafoListaAdjacencia {
     public void adicionarAresta(int v, int w) {
         if(!existeAresta(v,w)) {
             listaAdjacencias[v].add(w);
-            listaAdjacencias[w].add(v);
             numArestas++;
         }
     }
     public void removerAresta(int v, int w) {
         if(existeAresta(v,w)) {
             listaAdjacencias[v].remove((Integer) w);
-            listaAdjacencias[w].remove((Integer) v);
             numArestas--;
         }
     }
@@ -54,12 +52,10 @@ public class GrafoListaAdjacencia {
     }
     public String toDot() {
         StringBuilder sb = new StringBuilder();
-        sb.append("graph G {").append(System.lineSeparator());
+        sb.append("digraph G {").append(System.lineSeparator());
         for (int i = 0; i < numVertices; i++) {
             for (int j : listaAdjacencias[i]) {
-                if (i < j) {
-                    sb.append(i).append(" -- ").append(j).append(";").append(System.lineSeparator());
-                }
+                    sb.append(i).append(" -> ").append(j).append(";").append(System.lineSeparator());
             }
         }
         sb.append("}").append(System.lineSeparator());
