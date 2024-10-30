@@ -15,5 +15,6 @@ public class AppGrafoDirecionado {
         g.adicionarAresta(6, 4);
 
         System.out.println(g.toDot());
+        System.out.println(g.ordenacaoTopologica());
     }
 }
