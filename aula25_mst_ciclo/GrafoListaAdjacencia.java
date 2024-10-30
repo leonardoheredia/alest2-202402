@@ -69,8 +69,24 @@ public class GrafoListaAdjacencia {
     public int getNumVertices() {
         return numVertices;
     }
+    private boolean dfsRecursivo(int v, boolean[] visitados, int[] anteriores, ArrayList<Integer> caminho) {
+        System.out.println(v);
+        visitados[v] = true;
+        for(int w:verticesAdjacentes(v)) {
+            if(!visitados[w]) {
+                anteriores[w] = v;
+                dfsRecursivo(w, visitados, anteriores, caminho);
+            }
+        }
+        return false;
+    }
     public boolean temCiclo() {
         //IMPLEMENTAR A VERIFICACAO DE CICLO NO GRAFO NAO DIRECIONADO
+        boolean[] visitados = new boolean[numVertices];
+        int[] anteriores = new int[numVertices];
+        ArrayList<Integer> caminho = new ArrayList<>();
+        dfsRecursivo(3, visitados, anteriores, caminho);
+
         return false;
     }
 }
