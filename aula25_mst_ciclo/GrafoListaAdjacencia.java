@@ -69,6 +69,7 @@ public class GrafoListaAdjacencia {
     public int getNumVertices() {
         return numVertices;
     }
+
     private boolean dfsRecursivo(int v, boolean[] visitados, int[] anteriores, ArrayList<Integer> caminho) {
         System.out.println(v);
         visitados[v] = true;
